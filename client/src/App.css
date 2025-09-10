@@ -1,0 +1,294 @@
+/* ===== Light & Dark Base ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.app.light {
+  background-color: whitesmoke;
+  color: #000;
+}
+
+.app.dark {
+  background-color: #2b2b2b; /* dark gray */
+  color: #f1f1f1; /* soft white */
+}
+
+/* ===== Header ===== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+button.mode-toggle {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button.mode-toggle:hover {
+  background: #0056b3;
+}
+
+/* ===== Board Layout ===== */
+.board {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.column {
+  flex: 0 0 300px;
+  background: rgba(0,0,0,0.05);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.app.dark .column {
+  background: rgba(255,255,255,0.08);
+}
+
+.column h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column li {
+  background: white;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.column li:hover {
+  background: #f1f1f1;
+}
+
+.app.dark .column li {
+  background: #3a3a3a;
+  color: #f1f1f1;
+}
+
+.app.dark .column li:hover {
+  background: #4a4a4a;
+}
+
+.column li.done .lesson-title {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.lesson-title {
+  flex: 1;
+  cursor: pointer;
+}
+
+/* ===== Buttons ===== */
+.note-btn {
+  background: #ffc107;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  transition: background 0.2s;
+}
+
+.note-btn:hover {
+  background: #e0a800;
+}
+
+.app.dark .note-btn {
+  background: #ffca2c;
+  color: #222;
+}
+
+.app.dark .note-btn:hover {
+  background: #e0b622;
+}
+
+.download-btn {
+  margin-left: 1rem;
+  background: #17a2b8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.download-btn:hover {
+  background: #117a8b;
+}
+
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  color: black;
+}
+
+.app.dark .modal {
+  background: #3a3a3a;
+  color: #f1f1f1;
+}
+
+.modal textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: inherit;
+  color: inherit;
+}
+
+/* ===== Modal Actions ===== */
+.modal-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.modal-actions button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-actions button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+.modal-actions button:first-child:hover {
+  background: #218838;
+}
+
+.modal-actions button:last-child {
+  background: #dc3545;
+  color: white;
+}
+
+.modal-actions button:last-child:hover {
+  background: #c82333;
+}
+
+/* ===== Deadlines Section ===== */
+.deadlines {
+  margin: 2rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.app.dark .deadlines {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.deadline-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.deadline-form input,
+.deadline-form button {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.deadline-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.deadline-form button:hover {
+  background: #0056b3;
+}
+
+.deadline-list {
+  list-style: none;
+  padding: 0;
+}
+
+.deadline-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.deadline-list li:hover {
+  background: #f1f1f1;
+}
+
+.app.dark .deadline-list li {
+  background: #3a3a3a;
+  color: #f1f1f1;
+}
+
+.app.dark .deadline-list li:hover {
+  background: #4a4a4a;
+}
+
+.deadline-list li.done span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column;
+  }
+  .column {
+    flex: 1;
+    width: 100%;
+  }
+}
